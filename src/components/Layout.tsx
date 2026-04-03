@@ -16,20 +16,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-[#fdfbf4] font-sans text-gray-800 flex flex-col">
-      {/* Top Bar */}
-      <div className="bg-[#1e3a5f] text-white py-2 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-sm">
-        <div className="flex items-center space-x-4">
-          <a href={`tel:+${PHONE_NUMBER}`} className="flex items-center hover:text-yellow-400 transition">
-            <Phone size={16} className="mr-2" />
-            +91 7547872715
-          </a>
-          <span className="hidden md:inline">|</span>
-          <a href="mailto:info@karnatakapravasisoudha.com" className="flex items-center hover:text-yellow-400 transition">
-            <Mail size={16} className="mr-2" />
-            info@karnatakapravasisoudha.com
-          </a>
-        </div>
-      </div>
+
 
       {/* Navbar */}
       <nav className="bg-white shadow-md sticky top-0 z-40">
