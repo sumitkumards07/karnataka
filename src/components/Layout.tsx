@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Youtube, Menu, X, MessageCircle } from 'lucide-react';
 
-export const PHONE_NUMBER = "919117274186";
+export const PHONE_NUMBER = "918053267951";
 
 export function Layout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -102,7 +102,7 @@ export function Layout() {
                 </li>
                 <li className="flex items-center">
                   <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-[#eab308]" />
-                  <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-white transition">+91 9117274186</a>
+                  <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-white transition">+91 80532 67951</a>
                 </li>
                 <li className="flex items-center">
                   <Mail className="mr-3 h-5 w-5 flex-shrink-0 text-[#eab308]" />
