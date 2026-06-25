@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
-import { BookingModal } from '../components/BookingModal';
+import React from 'react';
 import { PHONE_NUMBER } from '../components/Layout';
-import { Calendar, Users, ChevronDown, Search, MapPin, Wifi, HeadphonesIcon, Bed, Monitor, Bath, Laptop, Star, Snowflake, Coffee, Sofa, Image } from 'lucide-react';
+import { Calendar, Users, ChevronDown, Search, MapPin, Wifi, HeadphonesIcon, Bed, Monitor, Bath, Laptop, Star, Snowflake, Coffee, Sofa, Image, Phone } from 'lucide-react';
 
 export function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedRoom, setSelectedRoom] = useState('');
-
-  const openBookingModal = (roomName: string) => {
-    setSelectedRoom(roomName);
-    setIsModalOpen(true);
-  };
-
-  const closeBookingModal = () => {
-    setIsModalOpen(false);
-    setSelectedRoom('');
+  const handleBookRoom = (roomName: string) => {
+    const message = `Hello, I am interested in booking the *${roomName}* at Karnataka Pravasi Soudha. Please provide more details.`;
+    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   return (
@@ -22,51 +14,31 @@ export function Home() {
       <div className="bg-background text-on-background font-body-md flex flex-col">
         <main className="flex-grow">
           {/* Hero Section */}
-          <section className="relative h-[600px] w-full bg-surface-container-high flex items-center justify-center">
+          <section className="relative h-[75vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
             <div 
-              className="absolute inset-0 bg-cover bg-center" 
-              style={{ backgroundImage: "url('/images/hero.png')" }}
+              className="absolute inset-0 bg-cover bg-center transform scale-105" 
+              style={{ backgroundImage: "url('/images/hero-new.jpg')" }}
             ></div>
-            <div className="absolute inset-0 hero-overlay"></div>
-            <div className="relative z-10 text-center max-w-[800px] px-gutter">
-              <h1 className="text-display-lg font-display-lg text-on-primary mb-md">Find Peace & Comfort in Tirumala</h1>
-              <p className="text-body-lg font-body-lg text-on-primary/90 mb-lg">Experience premium hospitality just steps away from divine blessings.</p>
-            </div>
-          </section>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80"></div>
+            <div className="relative z-10 text-center max-w-4xl px-6 sm:px-12 flex flex-col items-center">
+              <span className="text-[#eab308] font-semibold tracking-widest uppercase text-sm mb-4 block">Welcome to</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                Your Premium Stay <br/> in <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-[#eab308]">Tirumala</span>
+              </h1>
 
-          {/* Booking Widget (Overlapping Hero) */}
-          <section className="max-w-[1200px] mx-auto px-gutter relative -mt-xl z-20 mb-xl">
-            <div className="bg-surface-container-lowest rounded-xl shadow-[0px_8px_32px_rgba(0,0,0,0.12)] p-md flex flex-col md:flex-row gap-md items-end border border-outline-variant">
-              <div className="w-full md:w-1/4">
-                <label className="block text-label-md font-label-md text-on-surface-variant mb-xs">Check-in</label>
-                <div className="relative">
-                  <Calendar className="absolute left-sm top-1/2 -translate-y-1/2 text-outline w-5 h-5" />
-                  <input className="w-full pl-xl pr-sm py-sm border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md bg-surface-bright text-on-surface" type="date" />
-                </div>
-              </div>
-              <div className="w-full md:w-1/4">
-                <label className="block text-label-md font-label-md text-on-surface-variant mb-xs">Check-out</label>
-                <div className="relative">
-                  <Calendar className="absolute left-sm top-1/2 -translate-y-1/2 text-outline w-5 h-5" />
-                  <input className="w-full pl-xl pr-sm py-sm border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md bg-surface-bright text-on-surface" type="date" />
-                </div>
-              </div>
-              <div className="w-full md:w-1/4">
-                <label className="block text-label-md font-label-md text-on-surface-variant mb-xs">Rooms & Guests</label>
-                <div className="relative">
-                  <Users className="absolute left-sm top-1/2 -translate-y-1/2 text-outline w-5 h-5" />
-                  <select className="w-full pl-xl pr-sm py-sm border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary outline-none text-body-md font-body-md bg-surface-bright text-on-surface appearance-none">
-                    <option>1 Room, 2 Guests</option>
-                    <option>1 Room, 3 Guests</option>
-                    <option>2 Rooms, 4 Guests</option>
-                  </select>
-                  <ChevronDown className="absolute right-sm top-1/2 -translate-y-1/2 text-outline pointer-events-none w-5 h-5" />
-                </div>
-              </div>
-              <div className="w-full md:w-1/4">
-                <button className="w-full bg-secondary-container text-on-secondary font-headline-md text-headline-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm flex items-center justify-center gap-xs cursor-pointer">
-                  <Search className="w-5 h-5" /> Search Availability
+              <div className="flex flex-col sm:flex-row justify-center gap-5 w-full sm:w-auto">
+                <button 
+                  onClick={() => handleBookRoom('Deluxe Room')} 
+                  className="bg-white text-[#1e3a5f] hover:bg-gray-100 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-2xl transform hover:-translate-y-1 text-lg flex items-center justify-center"
+                >
+                  Book Your Stay
                 </button>
+                <a 
+                  href={`tel:+${PHONE_NUMBER}`} 
+                  className="bg-black/20 backdrop-blur-sm border-2 border-white/80 text-white hover:bg-white hover:text-[#1e3a5f] font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 text-lg flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-5 h-5" /> Speak to Us
+                </a>
               </div>
             </div>
           </section>
@@ -133,7 +105,7 @@ export function Home() {
                         <span className="text-price-display font-price-display text-on-surface">₹2,500</span>
                         <span className="text-body-sm font-body-sm text-on-surface-variant block">/ night</span>
                       </div>
-                      <button onClick={() => openBookingModal("Deluxe Room")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
+                      <button onClick={() => handleBookRoom("Deluxe Room")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
                     </div>
                   </div>
                 </div>
@@ -160,7 +132,7 @@ export function Home() {
                         <span className="text-price-display font-price-display text-on-surface">₹3,500</span>
                         <span className="text-body-sm font-body-sm text-on-surface-variant block">/ night</span>
                       </div>
-                      <button onClick={() => openBookingModal("Executive Room")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
+                      <button onClick={() => handleBookRoom("Executive Room")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
                     </div>
                   </div>
                 </div>
@@ -184,7 +156,7 @@ export function Home() {
                         <span className="text-price-display font-price-display text-on-surface">₹5,000</span>
                         <span className="text-body-sm font-body-sm text-on-surface-variant block">/ night</span>
                       </div>
-                      <button onClick={() => openBookingModal("Luxury Suite")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
+                      <button onClick={() => handleBookRoom("Luxury Suite")} className="bg-secondary-container text-on-secondary font-label-md text-label-md px-md py-sm rounded-lg hover:bg-secondary transition-colors shadow-sm cursor-pointer">Book</button>
                     </div>
                   </div>
                 </div>
@@ -194,14 +166,6 @@ export function Home() {
           </section>
         </main>
       </div>
-
-      {isModalOpen && (
-        <BookingModal 
-          roomName={selectedRoom} 
-          onClose={closeBookingModal} 
-          phoneNumber={PHONE_NUMBER}
-        />
-      )}
     </>
   );
 }

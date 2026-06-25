@@ -16,8 +16,8 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `*New Contact Enquiry*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}%0A*Message:* ${formData.message}`;
-    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${message}`;
+    const message = `*New Contact Enquiry*\n\n*Name:* ${formData.name}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
+    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -33,7 +33,7 @@ export function Contact() {
           <div>
             <h2 className="text-3xl font-bold text-[#1e3a5f] mb-6">Get in Touch</h2>
             <p className="text-gray-600 mb-8">
-              Have questions about room availability, group bookings, or special requirements? 
+              Have questions about room availability, group bookings, or special requirements?
               Contact us using the details below or fill out the form, and our team will get back to you promptly.
             </p>
 
