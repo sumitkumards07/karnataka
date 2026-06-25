@@ -24,7 +24,7 @@ export function Layout() {
           <div className="flex justify-between h-20">
             <div className="flex items-center">
               <Link to="/" className="flex-shrink-0 flex items-center">
-                <img className="h-16 w-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Seal_of_Karnataka.svg/1200px-Seal_of_Karnataka.svg.png" alt="Logo" referrerPolicy="no-referrer" />
+                <img className="h-16 w-auto object-contain py-1" src="/images/logo.png" alt="Karnataka Pravasi Soudha Logo" />
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
