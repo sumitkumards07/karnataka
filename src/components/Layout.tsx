@@ -107,7 +107,7 @@ export function Layout() {
               <ul className="space-y-4 text-sm text-gray-300">
                 <li className="flex items-start">
                   <MapPin className="mr-3 h-5 w-5 flex-shrink-0 text-[#eab308]" />
-                  <span>123 Karnataka Pravasi Soudha<br />Tirumala 797821</span>
+                  <span>M8PV 5R3, Ring Road<br />opposite Tirumala Museum<br />Tirumala, Tirupati Urban<br />Andhra Pradesh 517504</span>
                 </li>
                 <li className="flex items-center">
                   <Phone className="mr-3 h-5 w-5 flex-shrink-0 text-[#eab308]" />

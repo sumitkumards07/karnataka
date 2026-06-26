@@ -44,7 +44,7 @@ export function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg text-gray-900">Our Address</h3>
-                  <p className="text-gray-600 mt-1">123 Karnataka Pravasi Soudha<br />Tirumala, Andhra Pradesh 797821<br />India</p>
+                  <p className="text-gray-600 mt-1">M8PV 5R3, Ring Road, opposite Tirumala Museum,<br />Tirumala, Tirupati Urban, Tirupati,<br />Andhra Pradesh 517504, India</p>
                 </div>
               </div>
 
@@ -110,6 +110,20 @@ export function Contact() {
             </form>
           </div>
         </div>
+      </div>
+
+      {/* Google Map Section */}
+      <div className="w-full h-96 bg-gray-200">
+        <iframe
+          title="Karnataka Pravasi Soudha Location"
+          src="https://maps.google.com/maps?q=M8PV+5R3,+Ring+Road,+opposite+Tirumala+Museum,+Tirumala,+Tirupati&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </>
   );
