@@ -2,6 +2,7 @@ import React from 'react';
 import { PHONE_NUMBER } from '../components/Layout';
 import { About } from './About';
 import { Rooms } from './Rooms';
+import { Reviews } from './Reviews';
 import { FAQ } from './FAQ';
 import { Contact } from './Contact';
 import { Calendar, Users, ChevronDown, Search, MapPin, Wifi, HeadphonesIcon, Bed, Monitor, Bath, Laptop, Star, Snowflake, Coffee, Sofa, Image, Phone } from 'lucide-react';
@@ -92,6 +93,10 @@ export function Home() {
                 <p className="text-body-sm font-body-sm text-on-surface-variant">Our dedicated staff is available round-the-clock to assist you.</p>
               </div>
             </div>
+          </section>
+
+          <section id="reviews">
+            <Reviews />
           </section>
 
           <section id="faq">
