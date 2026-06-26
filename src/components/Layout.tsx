@@ -9,8 +9,17 @@ export function Layout() {
   const location = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -28,11 +37,11 @@ export function Layout() {
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Home</Link>
-              <Link to="/about" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/about') ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>About</Link>
-              <Link to="/rooms" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/rooms') ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Room Booking</Link>
-              <Link to="/faq" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/faq') ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>FAQ</Link>
-              <Link to="/contact" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/contact') ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Contact</Link>
+              <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') && !location.hash ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Home</Link>
+              <Link to="/#about" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#about' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>About</Link>
+              <Link to="/#rooms" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#rooms' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Room Booking</Link>
+              <Link to="/#faq" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#faq' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>FAQ</Link>
+              <Link to="/#contact" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#contact' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Contact</Link>
             </div>
             <div className="-mr-2 flex items-center md:hidden">
               <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#1e3a5f]">
@@ -46,11 +55,11 @@ export function Layout() {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Home</Link>
-              <Link to="/about" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/about') ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>About</Link>
-              <Link to="/rooms" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/rooms') ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Room Booking</Link>
-              <Link to="/faq" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/faq') ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>FAQ</Link>
-              <Link to="/contact" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/contact') ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Contact</Link>
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') && !location.hash ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Home</Link>
+              <Link to="/#about" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#about' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>About</Link>
+              <Link to="/#rooms" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#rooms' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Room Booking</Link>
+              <Link to="/#faq" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#faq' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>FAQ</Link>
+              <Link to="/#contact" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#contact' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Contact</Link>
             </div>
           </div>
         )}
@@ -79,7 +88,7 @@ export function Layout() {
                 <li><Link to="/privacy-policy" className="hover:text-white transition">Privacy Policy</Link></li>
                 <li><Link to="/terms-conditions" className="hover:text-white transition">Terms & Conditions</Link></li>
                 <li><Link to="/disclaimer" className="hover:text-white transition">Disclaimer</Link></li>
-                <li><Link to="/faq" className="hover:text-white transition">FAQ</Link></li>
+                <li><Link to="/#faq" className="hover:text-white transition">FAQ</Link></li>
               </ul>
             </div>
             {/* Work Hours */}
@@ -88,7 +97,7 @@ export function Layout() {
               <p className="text-sm text-gray-300 mb-6 font-medium">
                 Mon-Sun 24x7
               </p>
-              <Link to="/rooms" className="inline-block bg-[#eab308] hover:bg-[#ca8a04] text-[#1e3a5f] font-bold py-3 px-4 rounded transition text-sm text-center shadow-md">
+              <Link to="/#rooms" className="inline-block bg-[#eab308] hover:bg-[#ca8a04] text-[#1e3a5f] font-bold py-3 px-4 rounded transition text-sm text-center shadow-md">
                 Click here to Book Your Desirable Stay Today !
               </Link>
             </div>

@@ -1,5 +1,9 @@
 import React from 'react';
 import { PHONE_NUMBER } from '../components/Layout';
+import { About } from './About';
+import { Rooms } from './Rooms';
+import { FAQ } from './FAQ';
+import { Contact } from './Contact';
 import { Calendar, Users, ChevronDown, Search, MapPin, Wifi, HeadphonesIcon, Bed, Monitor, Bath, Laptop, Star, Snowflake, Coffee, Sofa, Image, Phone } from 'lucide-react';
 
 export function Home() {
@@ -163,6 +167,22 @@ export function Home() {
 
               </div>
             </div>
+          </section>
+
+          <section id="about">
+            <About />
+          </section>
+          
+          <section id="rooms">
+            <Rooms />
+          </section>
+          
+          <section id="faq">
+            <FAQ />
+          </section>
+          
+          <section id="contact">
+            <Contact />
           </section>
         </main>
       </div>
