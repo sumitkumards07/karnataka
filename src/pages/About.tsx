@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CheckCircle, MapPin, ShieldCheck, Car, Wifi, Coffee } from 'lucide-react';
 import { PHONE_NUMBER } from '../components/Layout';
-import { BookingModal } from '../components/BookingModal';
 
 export function About() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleEnquire = () => {
+    const message = `Hello, I am interested in booking a room at Karnataka Pravasi Soudha. Please provide more details.`;
+    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
   
   return (
     <>
@@ -52,7 +55,7 @@ export function About() {
             <h4 className="text-2xl font-bold text-gray-900 mb-3">Book Your Room at the Best Price</h4>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">Don’t overpay for accommodation in Tirumala. Karnataka Pravasi Soudha provides rooms at the best prices, ensuring a comfortable stay near all major attractions.</p>
             <p className="text-xl font-semibold text-[#2e7d32] mb-8">✨ Secure your peaceful stay today</p>
-            <button onClick={() => setIsModalOpen(true)} className="bg-[#1e3a5f] hover:bg-[#2a4d7c] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg transform hover:scale-105 active:scale-95">
+            <button onClick={handleEnquire} className="bg-[#1e3a5f] hover:bg-[#2a4d7c] text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg transform hover:scale-105 active:scale-95">
               Enquire Now
             </button>
           </div>
@@ -62,13 +65,6 @@ export function About() {
 
 
 
-      {isModalOpen && (
-        <BookingModal 
-          roomName="General Enquiry" 
-          onClose={() => setIsModalOpen(false)} 
-          phoneNumber={PHONE_NUMBER}
-        />
-      )}
     </>
   );
 }

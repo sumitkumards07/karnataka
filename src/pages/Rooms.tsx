@@ -1,20 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Users, Bed, Wifi, Coffee, CheckCircle } from 'lucide-react';
 import { PHONE_NUMBER } from '../components/Layout';
-import { BookingModal } from '../components/BookingModal';
 
 export function Rooms() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedRoom, setSelectedRoom] = useState('');
-
-  const openBookingModal = (roomName: string) => {
-    setSelectedRoom(roomName);
-    setIsModalOpen(true);
-  };
-
-  const closeBookingModal = () => {
-    setIsModalOpen(false);
-    setSelectedRoom('');
+  const handleBookRoom = (roomName: string) => {
+    const message = `Hello, I am interested in booking the *${roomName}* at Karnataka Pravasi Soudha. Please provide more details.`;
+    const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const rooms = [
@@ -76,7 +68,7 @@ export function Rooms() {
                 </div>
                 
                 <button 
-                  onClick={() => openBookingModal(room.name)}
+                  onClick={() => handleBookRoom(room.name)}
                   className="mt-auto w-full bg-[#1e3a5f] hover:bg-[#2a4d7c] text-white font-bold py-3 px-4 rounded transition"
                 >
                   Book Now
@@ -87,13 +79,6 @@ export function Rooms() {
         </div>
       </div>
 
-      {isModalOpen && (
-        <BookingModal 
-          roomName={selectedRoom} 
-          onClose={closeBookingModal} 
-          phoneNumber={PHONE_NUMBER}
-        />
-      )}
     </>
   );
 }
