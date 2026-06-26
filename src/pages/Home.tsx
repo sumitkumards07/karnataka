@@ -47,15 +47,21 @@ export function Home() {
             </div>
           </section>
 
-          {/* Rooms Section */}
-          <section id="rooms">
-            <Rooms />
-          </section>
-
-          {/* About Section */}
-          <section id="about">
-            <About />
-          </section>
+          <div className="flex flex-col">
+            <div className="order-1 md:order-2">
+              {/* About Section */}
+              <section id="about">
+                <About />
+              </section>
+            </div>
+            
+            <div className="order-2 md:order-1">
+              {/* Rooms Section */}
+              <section id="rooms">
+                <Rooms />
+              </section>
+            </div>
+          </div>
 
           {/* Why Choose Us */}
           <section className="max-w-[1200px] mx-auto px-gutter py-xl">
