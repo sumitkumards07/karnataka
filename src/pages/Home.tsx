@@ -3,6 +3,7 @@ import { PHONE_NUMBER } from '../components/Layout';
 import { About } from './About';
 import { Rooms } from './Rooms';
 import { Reviews } from './Reviews';
+import { Heritage } from './Heritage';
 import { FAQ } from './FAQ';
 import { Contact } from './Contact';
 import { Calendar, Users, ChevronDown, Search, MapPin, Wifi, HeadphonesIcon, Bed, Monitor, Bath, Laptop, Star, Snowflake, Coffee, Sofa, Image, Phone } from 'lucide-react';
@@ -17,9 +18,9 @@ export function Home() {
   return (
     <>
       <div className="bg-background text-on-background font-body-md flex flex-col">
-        <main className="flex-grow">
+        <main className="flex-grow flex flex-col">
           {/* Hero Section */}
-          <section className="relative h-[75vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden">
+          <section className="relative h-[75vh] min-h-[600px] w-full flex items-center justify-center overflow-hidden order-1">
             <div 
               className="absolute inset-0 bg-cover bg-center transform scale-105" 
               style={{ backgroundImage: "url('/images/hero-new.jpg')" }}
@@ -48,24 +49,18 @@ export function Home() {
             </div>
           </section>
 
-          <div className="flex flex-col">
-            <div className="order-1 md:order-2">
-              {/* About Section */}
-              <section id="about">
-                <About />
-              </section>
-            </div>
-            
-            <div className="order-2 md:order-1">
-              {/* Rooms Section */}
-              <section id="rooms">
-                <Rooms />
-              </section>
-            </div>
-          </div>
+          {/* About Section */}
+          <section id="about" className="order-2 md:order-3">
+            <About />
+          </section>
+          
+          {/* Rooms Section */}
+          <section id="rooms" className="order-3 md:order-2">
+            <Rooms />
+          </section>
 
           {/* Why Choose Us */}
-          <section className="max-w-[1200px] mx-auto px-gutter py-xl">
+          <section className="max-w-[1200px] mx-auto px-gutter py-xl order-4 md:order-5">
             <div className="text-center mb-lg">
               <h2 className="text-headline-lg font-headline-lg text-on-surface mb-sm">Why Choose Us</h2>
               <p className="text-body-md font-body-md text-on-surface-variant">Designed for your comfort and convenience during your pilgrimage.</p>
@@ -95,16 +90,20 @@ export function Home() {
             </div>
           </section>
 
-          <section id="reviews">
+          <section id="reviews" className="order-5 md:order-6">
             <Reviews />
           </section>
 
-          <section id="faq">
+          <section id="faq" className="order-6 md:order-7">
             <FAQ />
           </section>
           
-          <section id="contact">
+          <section id="contact" className="order-7 md:order-8">
             <Contact />
+          </section>
+
+          <section id="heritage" className="order-last md:order-4">
+            <Heritage />
           </section>
         </main>
       </div>
