@@ -47,14 +47,14 @@ export function Home() {
             </div>
           </section>
 
-          {/* About Section */}
-          <section id="about">
-            <About />
-          </section>
-
           {/* Rooms Section */}
           <section id="rooms">
             <Rooms />
+          </section>
+
+          {/* About Section */}
+          <section id="about">
+            <About />
           </section>
 
           {/* Why Choose Us */}

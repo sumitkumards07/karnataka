@@ -38,8 +38,8 @@ export function Layout() {
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link to="/" className={`px-3 py-2 rounded-md text-sm font-medium ${isActive('/') && !location.hash ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Home</Link>
-              <Link to="/#about" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#about' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>About</Link>
               <Link to="/#rooms" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#rooms' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Room Booking</Link>
+              <Link to="/#about" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#about' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>About</Link>
               <Link to="/#faq" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#faq' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>FAQ</Link>
               <Link to="/#contact" className={`px-3 py-2 rounded-md text-sm font-medium ${location.hash === '#contact' ? 'text-[#1e3a5f] border-b-2 border-[#1e3a5f]' : 'text-gray-600 hover:text-[#1e3a5f]'}`}>Contact</Link>
             </div>
@@ -56,8 +56,8 @@ export function Layout() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to="/" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') && !location.hash ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Home</Link>
-              <Link to="/#about" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#about' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>About</Link>
               <Link to="/#rooms" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#rooms' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Room Booking</Link>
+              <Link to="/#about" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#about' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>About</Link>
               <Link to="/#faq" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#faq' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>FAQ</Link>
               <Link to="/#contact" onClick={() => setIsMenuOpen(false)} className={`block px-3 py-2 rounded-md text-base font-medium ${location.hash === '#contact' ? 'text-gray-900 bg-gray-50' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'}`}>Contact</Link>
             </div>
