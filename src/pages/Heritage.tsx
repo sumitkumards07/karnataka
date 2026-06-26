@@ -14,10 +14,6 @@ export function Heritage() {
             "The Sri Venkateswara Swamy Temple stands as a timeless symbol of faith, devotion, and spiritual heritage. Kaliyuga Vaikuntha - the sacred abode of the Lord on Earth."
           </p>
 
-          <div className="my-16 relative group">
-            <div className="absolute -inset-4 bg-gradient-to-tr from-[#1e3a5f] to-[#eab308] rounded-[2rem] blur-2xl opacity-10 group-hover:opacity-20 transition-opacity"></div>
-            <img src="https://images.unsplash.com/photo-1623062833633-899401768412?q=80&w=1200&auto=format&fit=crop" alt="Sri Venkateswara Swamy Temple" className="relative w-full h-[500px] object-cover rounded-3xl shadow-xl" />
-          </div>
 
           <h3 className="text-3xl font-bold text-[#1e3a5f] mt-16 mb-6">Ancient Roots & Architecture</h3>
           <p className="mb-8 text-lg">Rising 853 metres above sea level, the Tirumala Hills consist of seven peaks symbolising the seven hoods of Adisesha. The temple follows classic Dravidian architectural style, with the sanctum sanctorum (Ananda Nilayam) crowned by a golden vimana that has inspired awe for centuries.</p>
