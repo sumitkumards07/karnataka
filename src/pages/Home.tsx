@@ -50,12 +50,12 @@ export function Home() {
           </section>
 
           {/* About Section */}
-          <section id="about" className="order-2 md:order-3">
+          <section id="about" className="order-3 md:order-3">
             <About />
           </section>
           
           {/* Rooms Section */}
-          <section id="rooms" className="order-3 md:order-2">
+          <section id="rooms" className="order-2 md:order-2">
             <Rooms />
           </section>
 
