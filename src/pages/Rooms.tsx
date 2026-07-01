@@ -13,21 +13,21 @@ export function Rooms() {
     {
       name: "Standard Non-AC Room",
       price: "₹800",
-      image: "/images/standard-room.png",
+      image: "/images/room-1.jpg",
       features: ["2 Guests", "1 Double Bed", "Attached Bath", "Fan"],
       description: "Clean and comfortable budget room ideal for short stays."
     },
     {
       name: "Standard AC Room",
       price: "₹1,200",
-      image: "/images/ac-room.png",
+      image: "/images/room-2.jpg",
       features: ["2 Guests", "1 Double Bed", "Air Conditioning", "TV"],
       description: "Comfortable air-conditioned room for a relaxing stay."
     },
     {
       name: "Family AC Room",
       price: "₹2,000",
-      image: "/images/family-room.png",
+      image: "/images/room-3.jpg",
       features: ["4 Guests", "2 Double Beds", "Air Conditioning", "TV"],
       description: "Spacious room perfect for families or groups of four."
     }
