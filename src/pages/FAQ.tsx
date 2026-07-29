@@ -7,7 +7,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "How can I book a room in Karnataka Pravasi Soudha Tirumala?",
-      answer: "You can book a room easily by clicking the 'Book Now' button on our website, which will open a WhatsApp chat with our booking team. Alternatively, you can call us directly at +91 98780 95086."
+      answer: "You can book a room easily by clicking the 'Book Now' button on our website, which will open a WhatsApp chat with our booking team. Alternatively, you can call us directly at +91 7582902249."
     },
     {
       question: "Are the rooms near Karnataka Pravasi Soudha Tirumala affordable?",

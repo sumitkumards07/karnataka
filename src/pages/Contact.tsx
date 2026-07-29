@@ -55,7 +55,7 @@ export function Contact() {
                 <div>
                   <h3 className="font-bold text-lg text-gray-900">Phone Number</h3>
                   <p className="text-gray-600 mt-1">
-                    <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-[#1e3a5f] transition">+91 98780 95086</a>
+                    <a href={`tel:+${PHONE_NUMBER}`} className="hover:text-[#1e3a5f] transition">+91 7582902249</a>
                   </p>
                 </div>
               </div>
