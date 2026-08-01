@@ -37,7 +37,7 @@ export function Home() {
                   href={`tel:+${PHONE_NUMBER}`} 
                   className="bg-white text-[#1e3a5f] hover:bg-gray-100 font-bold py-4 px-10 rounded-full transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-2xl transform hover:-translate-y-1 text-lg flex items-center justify-center"
                 >
-                  Call Us
+                  Call for Booking
                 </a>
                 <a 
                   href={`tel:+${PHONE_NUMBER}`} 
